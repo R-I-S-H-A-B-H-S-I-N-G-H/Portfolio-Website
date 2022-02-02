@@ -1,0 +1,65 @@
+* {
+	margin: 0;
+	padding: 0;
+	background-color: #141b1f;
+	/* background: gray; */
+	font-family: 'Montserrat';
+}
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	transition: 230ms ease-in-out;
+}
+.title {
+	height: clamp(1rem, 15vw, 6rem);
+	transition: 230ms ease-in-out;
+}
+.headerlinks a {
+	color: aliceblue;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 1rem;
+}
+.centerContent {
+	/* background: #000; */
+	margin: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.centerTitle {
+	color: aliceblue;
+	margin: 2rem;
+	/* background: blue; */
+}
+.first {
+	/* background: red; */
+	font-size: clamp(0.5rem, 10vw, 8rem);
+	font-weight: 700;
+	animation: example 5s linear 2s infinite alternate;
+	/* margin-bottom:clamp; */
+	transition: 230ms ease-in-out;
+}
+.second {
+	background: orange;
+	text-align: end;
+	font-size: clamp(0.5rem, 10vw, 8rem);
+	font-weight: 700;
+	/* margin-top:-2.5rem ; */
+	transition: 250ms ease-in-out;
+}
+.quote {
+	text-align: end;
+	color: darkorange;
+	font-size: clamp(0.5rem, 6vw, 4rem);
+	transition: 330ms ease-in-out;
+}
+.title:hover {
+	height: clamp(1.8rem, 17vw, 6.8rem);
+	cursor: pointer;
+}
+.headerlinks a:hover {
+	background-color: orange;
+	border-radius: 0.5rem;
+}
