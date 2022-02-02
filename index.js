@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var port = 3000;
+var port = process.env.PORT;
 app.listen(port, () => {
 	console.log('listing at port : ', port);
 });
