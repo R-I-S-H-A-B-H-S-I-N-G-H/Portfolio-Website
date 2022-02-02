@@ -6,6 +6,6 @@ app.listen(port, () => {
 });
 app.use(express.static('public'));
 
-app.get('/panda', (req, res) => {
-	res.sendFile(__dirname + '/public/assets/panda.png');
-});
+// app.get('/panda', (req, res) => {
+// 	res.sendFile(__dirname + '/public/assets/panda.png');
+// });
