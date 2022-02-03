@@ -26,3 +26,7 @@ app.get('/project', (req, res) => {
 app.get('/contact', (req, res) => {
 	res.sendFile(__dirname + '/public/contact/contact.html');
 });
+
+app.get('/resume', (req, res) => {
+	res.download(__dirname + '/assets/Rishabh Singh.pdf', 'Rishabh Singh.pdf');
+});
