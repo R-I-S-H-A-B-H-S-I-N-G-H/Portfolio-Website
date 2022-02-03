@@ -1,17 +1,21 @@
 {
 	"name": "portfolio",
 	"version": "1.0.0",
-	"description": "its my personal portfolio",
+	"description": "this is a portfolio",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
+	"keywords": [
+		"portfolio",
+		"rishabh",
+		"singh"
+	],
 	"author": "Rishabh Singh",
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
-		"dotenv": "^16.0.0",
-		"express": "^4.17.2",
-		"nodemon": "^2.0.15"
+		"dotenv": "^8.0.0",
+		"express": "^4.16.4"
 	}
 }
