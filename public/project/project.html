@@ -2,6 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="project.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -15,7 +17,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<img class="title" src="/panda" />
+			<img class="title" src="/programmer" />
 
 			<div class="headerlinks">
 				<a href="/">Home</a>
@@ -23,7 +25,19 @@
 				<a href="/contact">Contact</a>
 			</div>
 		</div>
-
-		<!-- here project body -->
+		<!-- project code here -->
+		<div id="project" class="content">
+			<h1>Projects</h1>
+			<ul>
+				<li v-for="item in projectdata">
+					<div class="project-title">{{item.name}}</div>
+					<p class="project-desc">{{item.description}}</p>
+					<a :href="item.source" class="project-link" target="/"
+						>{{item.source}}</a
+					>
+				</li>
+			</ul>
+		</div>
 	</body>
+	<script src="project.js"></script>
 </html>

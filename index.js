@@ -11,6 +11,12 @@ app.use(express.static('public'));
 app.get('/panda', (req, res) => {
 	res.sendFile(__dirname + '/assets/panda.png');
 });
+app.get('/programmer', (req, res) => {
+	res.sendFile(__dirname + '/assets/programmer.png');
+});
+app.get('/contactimg', (req, res) => {
+	res.sendFile(__dirname + '/assets/contact.png');
+});
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/public');
 });

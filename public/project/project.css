@@ -1,0 +1,45 @@
+.content {
+	color: aliceblue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.content h1 {
+	font-size: clamp(0.5rem, 10vw, 8rem);
+	font-weight: 700;
+	transition: 230ms ease-in-out;
+}
+.content ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+li {
+	width: clamp(70vw, 50vw, 80vw);
+	list-style: none;
+	margin: 1rem;
+	background: orange;
+	padding: 2rem;
+	border-radius: 0.3rem;
+	transition: 230ms ease-in-out;
+}
+.project-title {
+	background-color: orangered;
+	padding: 0.4rem;
+	font-size: clamp(0.5rem, 10vw, 2rem);
+	font-weight: 700;
+	transition: 230ms ease-in-out;
+}
+.project-desc {
+	background-color: orangered;
+	font-weight: 600;
+	padding: 1rem;
+}
+.project-link {
+	font-weight: bold;
+	color: rgb(119, 64, 170);
+}
+li:hover {
+	cursor: default;
+}

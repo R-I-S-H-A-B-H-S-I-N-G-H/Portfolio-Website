@@ -1,18 +1,22 @@
 * {
 	margin: 0;
 	padding: 0;
-	background-color: #141b1f;
+	/* background-color: #141b1f; */
 	/* background: gray; */
 	font-family: 'Montserrat';
 }
 .header {
+	background-image: linear-gradient(#223036, #141b1f);
+	/* background-color: #243036; */
+	/* height: 25vw; */
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	transition: 230ms ease-in-out;
+	transition: 200ms ease-in-out;
 }
 .title {
-	height: clamp(1rem, 15vw, 6rem);
+	margin: 1rem;
+	height: clamp(1rem, 15vw, 5rem);
 	transition: 230ms ease-in-out;
 }
 .headerlinks a {
@@ -21,7 +25,12 @@
 	font-weight: bold;
 	padding: 1rem;
 }
+body {
+	background-color: #141b1f;
+}
 .centerContent {
+	background-color: #141b1f;
+
 	/* background: #000; */
 	margin: 2rem;
 	display: flex;
@@ -37,7 +46,6 @@
 	/* background: red; */
 	font-size: clamp(0.5rem, 10vw, 8rem);
 	font-weight: 700;
-	animation: example 5s linear 2s infinite alternate;
 	/* margin-bottom:clamp; */
 	transition: 230ms ease-in-out;
 }
