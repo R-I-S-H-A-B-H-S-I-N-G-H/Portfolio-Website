@@ -11,12 +11,22 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
-		<script src="snake.js"></script>
 		<script src="sketch.js"></script>
+		<script src="snake.js"></script>
+		<link rel="stylesheet" href="snake.css" />
 	</head>
 	<body>
-		<div id="canvas">
-			<!-- canvas livers here -->
+		<div class="mainArea">
+			<header>Snake</header>
+			<h1 id="distance"></h1>
+			<div id="canvas" class="canvas">
+				<!-- canvas livers here -->
+			</div>
+
+			<div class="buttons">
+				<button class="left" onclick="s.left()">Left</button>
+				<button class="right" onclick="s.right()">Right</button>
+			</div>
 		</div>
 	</body>
 </html>

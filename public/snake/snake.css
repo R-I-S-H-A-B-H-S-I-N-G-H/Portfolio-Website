@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Courier New', Courier, monospace;
+}
+body {
+	background: gray;
+}
+header {
+	font-size: clamp(2rem, 8vw, 4rem);
+	font-weight: 800;
+}
+.mainArea {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.buttons {
+	display: flex;
+}
+.buttons button {
+	color: aliceblue;
+	font-weight: 900;
+	font-size: 1.5rem;
+	padding: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.left {
+	background: rgb(48, 48, 224);
+}
+.right {
+	background: rgb(64, 150, 64);
+}

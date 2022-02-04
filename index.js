@@ -32,6 +32,8 @@ app.get('/resume', (req, res) => {
 });
 
 app.get('/snake', (req, res) => {
-	console.log(__dirname);
 	res.sendFile(__dirname + '/public/snake/snake.html');
+});
+app.get('*', (req, res) => {
+	res.send('not found');
 });

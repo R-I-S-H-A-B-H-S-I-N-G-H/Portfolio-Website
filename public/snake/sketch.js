@@ -1,28 +1,34 @@
 var s;
-var force = 2;
+var force = 5;
+
 function setup() {
-	createCanvas(400, 400).parent('canvas');
+	createCanvas(window.innerWidth * 0.6, window.innerHeight * 0.6).parent(
+		'canvas'
+	);
 	background(200);
 	x = width / 2;
 	y = height / 2;
 	size = 10;
 	s = new Snake(random(width), random(height), 20);
-	s.addForce(force, 0);
+	s.addForce(-force, 0);
+	frameRate(5);
+}
+function windowResized() {
+	resizeCanvas(window.innerWidth * 0.6, window.innerHeight * 0.6);
+	s.reset();
 }
 function keyPressed() {
-	// console.log(key);
-	if (key == 'ArrowUp') {
-		s.addForce(0, -force);
-	}
-	if (key == 'ArrowDown') {
-		s.addForce(0, force);
-	}
 	if (key == 'ArrowLeft') {
-		s.addForce(-force, 0);
+		console.log('left');
+		s.left();
+		// s.addForce(-y, -x);
 	}
 	if (key == 'ArrowRight') {
-		s.addForce(force, 0);
+		s.right();
+		console.log('right');
+		// s.addForce(y, x);
 	}
+	// console.log('after change : x :', s.acc.x, ' y: ', s.acc.y);
 }
 function draw() {
 	background(200);
