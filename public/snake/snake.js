@@ -1,16 +1,20 @@
 const disTag = document.getElementById('distance');
+
 class Snake {
 	constructor(x, y, size) {
+		this.dir = 1;
 		this.speed = 5;
-		this.pos = { x: x, y: y };
+		this.dirRef = [createVector( 0, -1 ),createVector( 1,0 ),createVector( 0, 1 ),createVector( -1, 0 )];
+		this.pos = createVector(x,y);
 		this.size = size;
-		this.acc = { x: 0, y: 0 };
+		this.acc = createVector(0,0);
 		this.hit = false;
-		this.food = {
-			x: random(this.size, width - this.size),
-			y: random(this.size, height - this.size),
-			z: Math.floor(size / 2),
-		};
+		this.food = createVector(
+			random(this.size, width - this.size),
+			random(this.size, height - this.size),
+			Math.floor(size / 2)
+		);
+		
 	}
 	generateFood() {
 		this.food.x = random(this.size, width - this.size);
@@ -34,15 +38,13 @@ class Snake {
 	}
 
 	foodCollison() {
-		var d = dist(this.pos.x, this.pos.y, this.food.x, this.food.y);
-		if (disTag) {
-			// disTag.innerText = d.toString();
-		}
+		var d = dist(this.pos.x, this.pos.y, this.food.x, this.food.y);		
 		return d <= this.size / 2;
 	}
 	update() {
-		this.pos.x += this.acc.x;
-		this.pos.y += this.acc.y;
+		// this.pos.x += this.acc.x;
+		// this.pos.y += this.acc.y;
+		this.pos.add(this.acc);
 		if (this.collision()) {
 			this.reset();
 		}
@@ -51,33 +53,16 @@ class Snake {
 		}
 	}
 	left() {
-		var x, y;
-		if (this.acc.x == -this.speed && this.acc.y == 0) {
-			console.log('coming from left', this.acc.x, this.acc.y);
-			x = Math.abs(this.acc.x);
-			y = Math.abs(this.acc.y);
-			this.addForce(y, x);
-			console.log('updated value ', this.acc);
-		} else {
-			x = Math.abs(this.acc.x);
-			y = Math.abs(this.acc.y);
-			this.addForce(-y, -x);
+		this.dir -= 1;
+		if (this.dir < 0) { 
+			this.dir = 3;
 		}
+		this.addForce(this.dirRef[this.dir].x*this.speed,this.dirRef[this.dir].y*this.speed);
 	}
 	right() {
-		var x, y;
-		if (this.acc.x == -this.speed && this.acc.y == 0) {
-			console.log('coming from left', this.acc.x, this.acc.y);
-
-			x = Math.abs(this.acc.x);
-			y = Math.abs(this.acc.y);
-			this.addForce(y, -x);
-			console.log('updated value ', this.acc);
-		} else {
-			x = Math.abs(this.acc.x);
-			y = Math.abs(this.acc.y);
-			this.addForce(y, x);
-		}
+		this.dir += 1;
+		this.dir = this.dir % 4;
+		this.addForce(this.dirRef[this.dir].x*this.speed,this.dirRef[this.dir].y*this.speed);		
 	}
 	addForce(x, y) {
 		this.acc.x = x;

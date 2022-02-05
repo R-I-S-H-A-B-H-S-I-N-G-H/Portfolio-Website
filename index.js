@@ -30,7 +30,9 @@ app.get('/contact', (req, res) => {
 app.get('/resume', (req, res) => {
 	res.download(__dirname + '/assets/Rishabh Singh.pdf', 'Rishabh Singh.pdf');
 });
-
+app.get('/test', (req, res) => {
+	res.sendFile(__dirname + '/public/test/test.html');
+});
 app.get('/snake', (req, res) => {
 	res.sendFile(__dirname + '/public/snake/snake.html');
 });
