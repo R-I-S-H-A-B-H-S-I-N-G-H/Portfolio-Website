@@ -11,7 +11,6 @@ function setup() {
 	s = new Snake(random(width), random(height), 20);
 	s.addForce(-force, 0);
 	frameRate(5);
-	console.log(s.vec);
 }
 function windowResized() {
 	resizeCanvas(window.innerWidth * 0.6, window.innerHeight * 0.6);
