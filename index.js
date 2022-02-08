@@ -1,47 +1,31 @@
 const express = require('express');
-var compression = require('compression');
-var helmet = require('helmet');
 const app = express();
-require('dotenv').config();
+app.set('view engine', 'ejs');
 
-var port = process.env.PORT || 3000;
-app.listen(port, () => {
-	console.log('listing at port : ', port);
-});
-
-app.use(compression());
-app.use(helmet());
+var port = process.env.PORT || 3002;
 app.use(express.static('public'));
+app.use('/css', express.static(__dirname + 'public/css'));
+app.use('/assets', express.static(__dirname + 'public/assets'));
+app.use('/js', express.static(__dirname + 'public/js'));
+app.listen(port, () => {
+	console.log(`server listning at ${port}`);
+});
 
 app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/public');
+	res.render('index');
 });
 app.get('/project', (req, res) => {
-	res.sendFile(__dirname + '/public/project/project.html');
+	res.render('project');
 });
 app.get('/contact', (req, res) => {
-	res.sendFile(__dirname + '/public/contact/contact.html');
-});
-
-app.get('/resume', (req, res) => {
-	res.download(__dirname + '/assets/Rishabh Singh.pdf', 'Rishabh Singh.pdf');
-});
-app.get('/test', (req, res) => {
-	res.sendFile(__dirname + '/public/test/test.html');
+	res.render('contact');
 });
 app.get('/snake', (req, res) => {
-	res.sendFile(__dirname + '/public/snake/snake.html');
+	res.render('snake/snake');
 });
-app.get('/panda', (req, res) => {
-	res.sendFile(__dirname + '/assets/panda.png');
-});
-app.get('/programmer', (req, res) => {
-	res.sendFile(__dirname + '/assets/programmer.png');
-});
-app.get('/contacts', (req, res) => {
-	res.sendFile(__dirname + '/assets/contact.png');
-});
-
-app.get('*', (req, res) => {
-	res.send('not found');
+app.get('/resume', (req, res) => {
+	res.download(
+		__dirname + '/public/assets/Rishabh Singh.pdf',
+		'Rishabh Singh.pdf'
+	);
 });
