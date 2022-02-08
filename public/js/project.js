@@ -32,23 +32,6 @@ function showList() {
 	});
 	listP.append(list);
 }
-/*
-	<!-- <div>hello</div> -->
-		<div id="somthing" class="test"></div>
-		<!-- <div id="project" class="content">
-			<h1>Projects</h1>
-			<ul>
-				<li v-for="item in projectdata">
-					<div class="project-title">{{item.name}}</div>
-					<p class="project-desc">{{item.description}}</p>
-					<a :href="item.source" class="project-link" target="/"
-						>{{item.source}}</a
-					>
-				</li>
-			</ul>
-		</div> -->
-
-*/
 
 function getData() {
 	return [
